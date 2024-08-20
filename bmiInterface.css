@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Khand", sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+    --primary-color: #100F1B;
+    --secondary-color: rgba(37, 37, 58, 0.575);
+    --input-element-background-color: rgba(255, 255, 255, 0.575);
+    --button-color: #115BCA;
+    --placeholder-color: rgba(37, 37, 58, 0.575);
+}
+
+body {
+    background-color: var(--primary-color);
+    padding: 20px;
+}
+
+.bmiForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 650px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    visibility: hidden;
+}
+
+.title {
+    color: white;
+    font-size: 40px;
+    align-self: flex-start;
+}
+
+.title b {
+    font-weight: 500;
+}
+
+.genderPickerContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.maleContainer,
+.femaleContainer {
+    height: 150px;
+    width: 147px;
+    background-color: var(--secondary-color);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+    border: none;
+}
+
+.maleContainer.selected,
+.femaleContainer.selected {
+    background-color: rgba(255, 255, 255, 0.192) ;
+}
+
+.maleContainer:hover,
+.femaleContainer:hover {
+    background-color: rgba(255, 255, 255, 0.363) ;
+}
+
+.bx-male-sign {
+    font-size: 70px;
+    color: rgb(245, 4, 4);
+}
+
+.bx-female-sign {
+    color: rgb(238, 11, 136);
+    font-size: 70px;
+}
+
+.maleLabel,
+.femaleLabel {
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+.ageInputContainer {
+    height: 105px;
+    width: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    display: flex;
+    align-items:  center;
+    justify-content: center;
+}
+
+#studentAge,
+#studentWeight {
+    height: 40px;
+    width: 250px;
+    border-radius: 20px;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    text-align: center;
+    background-color: var(--input-element-background-color);
+    color:#100F1B;
+    font-weight: 500;
+}
+
+#studentHeight {
+    height: 40px;
+    width: 160px;
+    border-radius: 20px;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    text-align: center;
+    background-color: var(--input-element-background-color);
+    color:#100F1B;
+    font-weight: 500;
+}
+
+#studentAge::placeholder,
+#studentHeight::placeholder,
+#studentWeight::placeholder {
+    color: var(--placeholder-color);
+    font-weight: 500;
+    font-size: 14.50px;
+}
+
+#studentAge::-webkit-inner-spin-button,
+#studentAge::-webkit-outer-spin-button,
+#studentHeight::-webkit-inner-spin-button,
+#studentHeight::-webkit-inner-outer-button,
+#studentWeight::-webkit-inner-spin-button,
+#studentWeight::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+
+.heightWeightInputContainer{
+    height: 180px;
+    width: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+    justify-content: space-evenly;
+}
+
+#generateQrButton {
+    background-color: var(--button-color);
+    width: 100%;
+    height: 47px;
+    border: none;
+    border-radius: 25px;
+    color: #FFFFFF;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+#generateQrButton:active {
+    transform: scale(1.1);
+}
+
+/* Heigth Dropdown */
+.heightPlaceholderContainer {
+    color: var(--placeholder-color);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.heightMenuContainer .heightHeaderContainer {
+    display: flex;
+    height: 40px;
+    width: 80px;
+    background-color: var(--input-element-background-color);
+    gap: 8px;
+    font-weight: 400;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+}
+
+.heightHeaderContainer i {
+    font-size: 25px;
+    transition: 0.3s;
+    color: var(--secondary-color)
+}
+
+.heightMenuContainer.active .heightHeaderContainer i {
+    transform: rotate(-180deg);
+}
+
+.heightMenuContainer .options {
+    position: absolute;
+    padding: 20px;
+    width: 100px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    margin-top: 10px;
+    display: none;
+}
+
+.heightMenuContainer.active .options {
+    display: block;
+}
+
+.options .option {
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: var(--input-element-background-color);
+}
+
+.options .option:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Height Container */
+
+.heightContainer {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="heroSection.css">
+    <link rel="stylesheet" href="userInputInterface.css">
+    <link rel="stylesheet" href="bmiInterface.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="qrPopup.css">
+    <link rel="stylesheet" href="bmiResult.css">
+    <script type="module" src="script.js"></script>
+    <title>BMI Calculator</title>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="heroSection">
+        <div class="titleAndLogoContainer">
+            <h1 class="heroSectionTitle"><b>BMI</b> Calculator</h1>
+            <i class='bx bx-calculator'></i>
+        </div>
+
+        <div class="cesLogoContainer">
+
+        </div>
+
+        <div class="creditsContainer">
+            <span>CES Antipolo Chapter</span>
+            <p>Developed by: Team Mga Alagad ni Thanos</p>
+            <p>ICCT Antipolo Campus, 2024</p>
+        </div>
+    </section>
+
+
+    <!-- Student Form -->
+    <form class="userInputForm" id="userInputForm">
+        <h1 class="userInputTitle"><b>BMI</b> Calculator</h1>
+        <div class="studentInfoContainer">
+            <label for="studentName">Name</label>
+            <input type="text" id="studentName" name="studentName" placeholder="Enter your Full Name">
+            <label for="studentNumber">Student Number</label>
+            <input type="text" id="studentNumber" name="studentNumber" placeholder="Enter yout Student No.">
+        </div>
+
+        <div class="academicInfoContainer">
+            <label for="yearLevel">Year Level</label>
+            <!-- Academic Year Dropdown -->
+            <div class="dropDownMenu">
+                <div class="dropDownSelector">
+                    <span class="dropDownPlaceholder">Select your option</span>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+        
+                <ul class="options" id="year">
+                    <li class="option" data-value="1st Year">
+                        <span class="option-text">1st Year</span>
+                    </li>
+                    <li class="option" data-value="2nd Year">
+                        <span class="option-text">2nd Year</span>
+                    </li>
+                    <li class="option" data-value="3rd Year">
+                        <span class="option-text">3rd Year</span>
+                    </li>
+                    <li class="option" data-value="4th Year">
+                        <span class="option-text">4th Year</span>
+                    </li>
+                </ul>
+            </div>
+
+            <label for="program">Program</label>
+            <input type="text" id="program" name="program" placeholder="Enter your Course">
+        </div>
+
+        <button type="button" id="proceedButton">Proceed</button>
+    </form>
+
+
+
+    <!-- BMI Form -->
+    <form class="bmiForm" id="bmiForm">
+        <h1 class="title"><b>BMI</b> Calculator</h1>
+        <div class="genderPickerContainer">
+            <button type="button" class="maleContainer" id="maleButton" value="Male">
+                <i class='bx bx-male-sign'></i>
+                <p class="maleLabel">Male</p>
+            </button>
+            <button type="button" class="femaleContainer" id="femaleButton" value="Female">
+                <i class='bx bx-female-sign'></i>
+                <p class="femaleLabel">Female</p>
+            </button>
+        </div>
+        <div class="ageInputContainer">
+            <input type="number" id="studentAge" name="studentAge" placeholder="Enter your Age">
+        </div>
+        <div class="heightWeightInputContainer">
+            <div class="heightContainer">
+                <input type="text" id="studentHeight" name="studentHeight" placeholder="Enter your height">
+                
+                <!--  Height Dropdown -->
+                <div class="heightMenuContainer">
+                    <div class="heightHeaderContainer">
+                        <span class="heightPlaceholderContainer">Unit</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </div>
+
+                    <ul class="options">
+                        <li class="option">
+                            <span class="option-text" data-value="ft">ft</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text" data-value="cm">cm</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text" data-value="mm">mm</span>
+                        </li>
+                        <li class="option">
+                            <span class="option-text" data-value="m">m</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <input type="number" id="studentWeight" name="studentWeight" placeholder="Enter your weight in kg.">
+        </div>
+
+        <button type="submit" id="generateQrButton">Generate QR</button>
+
+    </form>
+
+    <div id="qrPopup">
+        <h2>QR Code</h2>
+        <p><span id="eventNamePlaceholder"></span></p>
+        <img src="" id="qrImage" alt="QR Code">
+        <button id="downloadButton">Download</button>
+    </div>
+    
+    <div id="bmiResultContainer">
+        <h3>BMI Result</h3>
+        <p id="bmiResult"></p>
+        <button id="doneButton">Done</button>
+    </div>
+</body>
+</html>

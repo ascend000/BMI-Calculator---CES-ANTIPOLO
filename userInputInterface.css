@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Khand", sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+    --primary-color: #100F1B;
+    --secondary-color: rgba(37, 37, 58, 0.575);
+    --input-element-background-color: rgba(255, 255, 255, 0.712);
+    --button-color: #115BCA;
+    --placeholder-color: rgba(37, 37, 58, 0.575);
+}
+
+body {
+    background-color: var(--primary-color);
+    padding: 20px 0px;
+}
+
+.userInputForm {
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+.userInputTitle {
+    color: #FFFFFF;
+    font-size: 40px;
+    text-align: center;
+}
+
+.userInputTitle b {
+    font-weight: 500;
+}
+
+.studentInfoContainer,
+.academicInfoContainer {
+    height: 250px;
+    width: 300px;
+    border-radius: 9px;
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    padding: 20px;
+}
+
+label {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 20px;
+    align-self: flex-start
+}
+
+#studentName, 
+#studentNumber,
+#program {
+    height: 40px;
+    width: 250px;
+    border-radius: 20px;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    text-align: center;
+    background-color: var(--input-element-background-color);
+    color:#100F1B;
+    font-weight: 500;
+}
+
+#yearLevel {
+    height: 40px;
+    width: 250px;
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    background-color: var(--input-element-background-color);
+    color:#100F1B;
+    font-weight: 500;
+}
+
+.dropDownPlaceholder {
+    color: var(--placeholder-color);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.dropDownMenu .dropDownSelector {
+    display: flex;
+    height: 40px;
+    width: 250px;
+    background-color: var(--input-element-background-color);
+    padding: 20px;
+    font-weight: 400;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+}
+
+.dropDownSelector i {
+    font-size: 25px;
+    transition: 0.3s;
+    color: var(--secondary-color)
+}
+
+.dropDownMenu.active .dropDownSelector i {
+    transform: rotate(-180deg);
+}
+
+.dropDownMenu .options {
+    position: absolute;
+    padding: 20px;
+    width: 250px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    margin-top: 10px;
+    display: none;
+}
+
+.dropDownMenu.active .options {
+    display: block;
+}
+
+.options .option {
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: var(--input-element-background-color);
+}
+
+.options .option:hover {
+    background-color: var(--secondary-color);
+}
+
+#studentName::placeholder, 
+#studentNumber::placeholder,
+#program::placeholder, 
+#yearLevel::placeholder {
+    text-align: center;
+    color: var(--placeholder-color);
+    font-weight: 500;
+    font-size: 14.50px;
+}
+
+#proceedButton {
+    background-color: var(--button-color);
+    width: 300px;
+    height: 55px;
+    border: none;
+    border-radius: 25px;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+#proceedButton:active {
+    transform: scale(1.1);
+}
+
+/* Transition added */
+#userInputForm {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    visibility: hidden; 
+}
+
+
+#userInputForm.visible {
+    opacity: 1;
+    visibility: visible; 
+}

@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Khand", sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+:root {
+    --primary-color: #100F1B;
+    --secondary-color: rgba(37, 37, 58, 0.575);
+    --input-element-background-color: rgba(255, 255, 255, 0.575);
+    --button-color: #115BCA;
+}
+
+#qrPopup {
+    position: fixed;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    display: none;
+    z-index: 1001; 
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 1s;
+}
+
+#qrPopup h2 {
+    color: var(--primary-color);
+    font-size: 35px;
+    font-weight: 400;
+}
+
+#qrPopup img {
+    width: 100%;
+    padding: 10px;
+}
+
+#qrPopup #eventNamePlaceholder {
+    font-size: 1.25rem;
+}
+
+#qrPopup.show-img {
+    max-height: 500px;
+    margin: 10px auto;
+    border: 1px solid var(--secondary-color);
+}
+
+#downloadButton { 
+    position: static; 
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 500;
+    letter-spacing: .08rem;
+    width: 15rem;
+    padding: 13px 18px;
+    font-size: 16px;
+    border-radius: 25px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
